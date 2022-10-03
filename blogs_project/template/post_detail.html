@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{%static "css/bootstrap.css"%}">
+    <link rel="stylesheet" href="{%static "css/blog.css"%}">
+    <title></title>
+  </head>
+  <body>
+    <div class="" align="center">
+      <h1>{{post.title}}</h1>
+      <p>published on {{post.publish}} by {{post.author|title}}</p>
+      <legend>{{post.body}}</legend>
+    <hr>
+    </div>
+
+  </body>
+</html>

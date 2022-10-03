@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <title></title>
+  <link rel="stylesheet" href="{%static "css/bootstrap.css"%}">
+  <link rel="stylesheet" href="{%static "css/blog.css"%}">
+  <style>
+    a:link{
+      text-decoration: none;
+    }
+    h1{
+      text-decoration: none;
+    }
+  </style>
+  </head>
+  <body>
+
+  <div class="row" align="center">
+    <div class="col-lg-3,col-md-3,col-sm-6">
+      {%for post in post_list%}
+      <a href="{{post.get_absolute_url}}"><h1 align='center'>{{post.title}}</h1></a>
+      <legend class=container>{{post.body|truncatewords:30}}</legend>
+      <p>{{post.created}}</p>&nbsp&nbsp&nbsp <p>{{post.updated}}</p>
+      <h3>{{post.status}}</h3>
+      <hr width=70% align="center">
+      {%endfor%}
+    </div>
+    </div>
+    <div class="">
+      {%include 'pagination.html' with page=post_list%}
+    </div>
+  </body>
+</html>
